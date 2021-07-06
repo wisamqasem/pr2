@@ -1,0 +1,12 @@
+body, html {
+    height: 100%;
+    color: #141414;
+}
+
+   main{
+background-image:  url("/la.png"); ;
+-webkit-background-size:cover;
+-moz-background-size:cover;
+-o-backgrond-size:cover;
+background-size:cover;
+ }
