@@ -10,3 +10,8 @@ background-image:  url("/la.png"); ;
 -o-backgrond-size:cover;
 background-size:cover;
  }
+ .card {
+    width: 500px;
+    max-width: 100%;
+  }
+  

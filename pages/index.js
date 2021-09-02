@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Link from "next/link";
 import Head from 'next/head'
 import Carousel from 'react-bootstrap/Carousel'
+import ContactForm  from '../components/contact';
 import axios from 'axios'
 
 // axios.get('https://firestore.googleapis.com/v1/projects/my-job-68b20/databases/(default)/documents/data/')
@@ -20,7 +21,7 @@ const index = () => {
     const [products, setProducts] = useState([]);
     ///////////////////////////////////////////////////////////////////////////// GET DATA FROM FIREBASE FROM HERE..............
    if(products.length==0){
-        axios.get("https://firestore.googleapis.com/v1/projects/my-job-68b20/databases/(default)/documents/data").then(res=>{
+        axios.get("https://firestore.googleapis.com/v1/projects/next-c8eaf/databases/(default)/documents/data").then(res=>{
  console.log("the data : ",res)
             let arr=[];
             //أنساك من هاد الفنكشن
@@ -140,11 +141,14 @@ const index = () => {
   
     <h5 className="card-title">{product.title}</h5>
     <p className="card-text">{product.text}</p>
-    <Link href="/blog/post">
+    <Link href={`/blog/post?id=${product.id}`}>
     <a className="btn text-secondary">Go somewhere </a>
     </Link> 
     </div>
     </div>
+  
+ 
+  
     </div>
         )
 
@@ -259,6 +263,7 @@ const index = () => {
     </div> */}
     </div>
     </div>
+    <ContactForm/>
 </>
     )
 }
